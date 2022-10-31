@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-heading: 'Staatliches', cursive;
+    --ff-texting: 'Palanquin', sans-serif;
+
+    --fc-primary: hsl(274, 84%, 12%);
+    --fc-secondary: hsl(0, 0%, 100%);
+
+    --bg-primary: hsl(275, 18%, 79%);
+    --bg-secondary: hsl(218, 17%, 62%);
+    --bg-body: hsl(233, 100%, 97%);
+    /*HSL - H(Hue - de 0 à 360... eixo X), S(Saturation - de 0 à 180), L(Lumiance)*/
+
+    font-size: 62.5%;
+    --fs-body: 2.0rem;
+    --fs-heading: 4.0rem;
+}
+
+body {
+    font-family: var(--ff-texting);
+    font-size: var(--fc-primary);
+
+}
+
+.page {
+    margin: 0 auto;
+    padding: 0;
+}
+
+header {
+    background-color: var(--bg-secondary);
+
+    text-align: center;
+
+    padding-bottom: 1rem;
+
+}
+
+img {
+    margin: 3.2rem 0 3.2rem;
+}
+
+header h1 {
+    color: var(--fc-secondary);
+    background-color: var(--bg-primary);
+
+
+    font-family: var(--ff-heading);
+    font-weight: 400;
+    font-size: 4.0rem;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+
+    padding: 1rem;
+    margin-bottom: 2.9rem;
+}
+
+main {
+    background-color: var(--bg-body);
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+
+    align-items: center;
+    text-align: center;
+
+}
+
+main p {
+    font-family: var(--ff-texting);
+    color: var(--fc-primary);
+    font-size: 2.0rem;
+    font-weight: 400;
+    line-height: 2.0rem;
+    letter-spacing: 1px;
+
+    padding: 3.5rem 6.0rem;
+    margin: 2rem 4rem 2rem 4rem;
+}
+
+.card {
+    font-family: var(--ff-heading);
+
+    position: relative;
+
+    animation: topdown 700ms 300ms backwards;
+}
+
+.card h2 {
+    position: absolute;
+    top: 4.6rem;
+    right: 1.6rem;
+    font-weight: 400;
+    font-size: var(--fs-body);
+    gap: 2.4rem;
+
+    animation: downtop 700ms 300ms;
+}
+
+.card h2 span {
+    background-color: var(--fc-secondary);
+    border-radius: 2.0rem;
+    padding: 0 2.4rem;
+    height: 3.5rem;
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*  @media (min-width: 400px) {
+    .page {
+        max-width: 135rem;
+        padding: 0;
+    }
+  }
+
+animation-name: topdown; (A gente escolhe)
+  animation-duration: 700ms;
+  animation-fill-mode: forward; (Determina aonde vai parar forward or backwards)
+  animation-direction: reverse; (Segue o caminho contrario da animação)
+  animation-delay: 200ms;
+  animation-timing-function: ease; (Curva bezier)
+  animation-iteration-count: infinite; (Libera tipos de funções como infito)
+  animation-play-state: paused; (seletor:hover + função para usar ser usado)
+  */
